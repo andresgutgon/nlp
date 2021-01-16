@@ -8,7 +8,7 @@ I'll try to update here with all the resourses I find helpfull for learning and 
 I got introduced to NLP in [this YouTuve playlist](https://www.youtube.com/playlist?list=PLLssT5z_DsK8HbD2sPcUIDfQ7zmBarMYv). Is a series of short introductory videos explaining the base concepts.
 
 ### NLTK Book (I'm here now)
-[nltk](http://nltk.org/) is a Python framewor to work with human language language. They have [a book](http://www.nltk.org/book/) explaining the software and how it works
+[nltk](http://nltk.org/) is a Python framework to work with human language language. They have [a book](http://www.nltk.org/book/) explaining the software and how it works
 
 ## NLTK (The software)
 To interact with this Python package I'm going to use a Docker image with latest Python and nltk + dependencies. This is how to build and open the playground
@@ -33,3 +33,6 @@ python
 This will prompt you with a menu inside Python interactive session.
 The instructions about how to [download the book materials is in this chapter](http://www.nltk.org/book/ch01.html)
 Ok now read the chapter and follow the instructions :)
+
+## Ideas
+1. Do a Node application with Svelte as UI framework and a backend that analyse sentiment analisis with [retextJS](https://github.com/retextjs/retext). This can be expanded to input a Tweet and analyse the overall sentiment of all the replys to that tweet.
