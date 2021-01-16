@@ -4,10 +4,10 @@ This is just me learning a bit about NLP (Natural Lenguage Proccesing). I got in
 ## Learning material
 I'll try to update here with all the resourses I find helpfull for learning and doing things related with NLP
 
-### NLP || Dan Jurafsky || Stanford University
+### 1 - NLP || Dan Jurafsky || Stanford University
 I got introduced to NLP in [this YouTuve playlist](https://www.youtube.com/playlist?list=PLLssT5z_DsK8HbD2sPcUIDfQ7zmBarMYv). Is a series of short introductory videos explaining the base concepts.
 
-### NLTK Book (I'm here now)
+### 2 - NLTK Book (I'm here now)
 [nltk](http://nltk.org/) is a Python framework to work with human language language. They have [a book](http://www.nltk.org/book/) explaining the software and how it works
 
 ## A note on Jupyter Notebooks

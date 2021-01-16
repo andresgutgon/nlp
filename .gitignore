@@ -2,7 +2,7 @@ book/nltk_data
 
 book/.cache
 book/.config
-book/.ipynb_checkpoints
+book/.ipynb_checkpoints/*
 book/.ipython
 book/.jupyter
 book/.local
