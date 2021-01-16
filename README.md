@@ -15,23 +15,20 @@ To interact with this Python package I'm going to use a Docker image with latest
 To build the Docker images go to the root of this repo and do:
 `nltk` is the name of the image we built
 ```
- docker build -t nltk .
+ docker build --rm -t jupyter/nltk-book .
 ```
 
-Enter on the immage we built. Run the Docker container:
-Now you should be inside that container and have Python running. Type `python`
+This command will start an server on port `8888` on your browser. Follow the instructions
 ```
- docker run --name nltkplayground -it nltk
+ docker run -p 8888:8888 --volume={PATH_IN_YOUR_COMPUTER}:/home/jovyan jupyter/nltk-book:latest
 ```
-
-To start an existing container and attach to it in one command
-This is when you already run the 2 previous commands. When you come back to learning more.
-The downloaded book is mounted in a Docker volume so it's in your machine
-```
-docker start -ai nltkplayground
-```
+Note:
+`PATH_IN_YOUR_COMPUTER` has to be a valid path in your computer. Mine for example is:
+`/Users/andres/code/andresgutgon/nlp/book`. This way when Jupyter writes a book page it is storage in my
+machine because the volume is share between Docker and the host (my machine).
 
 ### Download the book with nltk command line
+Inside the container:
 ```
 python
 >> import nltk
@@ -39,7 +36,15 @@ python
 ```
 This will prompt you with a menu inside Python interactive session.
 The instructions about how to [download the book materials is in this chapter](http://www.nltk.org/book/ch01.html)
+The downloaded book is mounted in a Docker volume so it's in your machine (Check Dockerfile if courious).
 Ok now read the chapter and follow the instructions :)
+
+### Pick from previous day
+To start an existing container and attach to it in one command
+This is when you already run the 2 previous commands. When you come back to learning more.
+```
+docker start -ai nltkplayground
+```
 
 ## Ideas
 1. Do a Node application with Svelte as UI framework and a backend that analyse sentiment analisis with [retextJS](https://github.com/retextjs/retext). This can be expanded to input a Tweet and analyse the overall sentiment of all the replys to that tweet.

@@ -1,19 +1,10 @@
-# set base image (host OS)
-FROM python:3.8
+# Use a jupyter notes as Playground
+# FROM jupyter/scipy-notebook:d979fa1b8c4a
+FROM jupyter/scipy-notebook:latest
 
-# set the working directory in the container
-WORKDIR /code
+# Install from requirements.txt file
+COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/
+RUN pip install --requirement /tmp/requirements.txt && \
+    fix-permissions $CONDA_DIR && \
+    fix-permissions /home/$NB_USER
 
-# copy the dependencies file to the working directory
-COPY requirements.txt .
-
-# install dependencies
-RUN pip install -r requirements.txt
-
-# copy the content of the local src directory to the working directory
-RUN mkdir /root/nltk_data
-VOLUME ["/root/nltk_data"]
-COPY src/ .
-
-# command to run on container start
-ENTRYPOINT ["/bin/bash"]
