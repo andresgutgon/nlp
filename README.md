@@ -13,16 +13,23 @@ I got introduced to NLP in [this YouTuve playlist](https://www.youtube.com/playl
 ## NLTK (The software)
 To interact with this Python package I'm going to use a Docker image with latest Python and nltk + dependencies. This is how to build and open the playground
 To build the Docker images go to the root of this repo and do:
+`nltk` is the name of the image we built
 ```
  docker build -t nltk .
 ```
-`nltk` is the name of the image we built
 
 Enter on the immage we built. Run the Docker container:
+Now you should be inside that container and have Python running. Type `python`
 ```
  docker run --name nltkplayground -it nltk
 ```
-Now you should be inside that container and have Python running. Type `python`
+
+To start an existing container and attach to it in one command
+This is when you already run the 2 previous commands. When you come back to learning more.
+The downloaded book is mounted in a Docker volume so it's in your machine
+```
+docker start -ai nltkplayground
+```
 
 ### Download the book with nltk command line
 ```

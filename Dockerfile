@@ -11,6 +11,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # copy the content of the local src directory to the working directory
+RUN mkdir /root/nltk_data
+VOLUME ["/root/nltk_data"]
 COPY src/ .
 
 # command to run on container start
