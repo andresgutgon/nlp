@@ -10,7 +10,14 @@ I got introduced to NLP in [this YouTuve playlist](https://www.youtube.com/playl
 ### NLTK Book (I'm here now)
 [nltk](http://nltk.org/) is a Python framework to work with human language language. They have [a book](http://www.nltk.org/book/) explaining the software and how it works
 
-## NLTK (The software)
+## A note on Jupyter Notebooks
+From [jupyter.org](https://jupyter.org/) website:
+> The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
+
+So this is great. I started my `Dockerfile` from on Dockerfile they maintain with python package for science and added
+the packages I need like `nltk`.
+
+## Follow the book with Jupyter Notebooks and NLTK (The software)
 To interact with this Python package I'm going to use a Docker image with latest Python and nltk + dependencies. This is how to build and open the playground
 To build the Docker images go to the root of this repo and do:
 `nltk` is the name of the image we built
@@ -28,23 +35,14 @@ Note:
 machine because the volume is share between Docker and the host (my machine).
 
 ### Download the book with nltk command line
-Inside the container:
+Create a note book in Jupyter UI and run these commands. This will save in `PATH_IN_YOUR_COMPUTER` the book
+chapters and all NLP code necesary
 ```
 python
 >> import nltk
 >> nltk.download()
 ```
-This will prompt you with a menu inside Python interactive session.
-The instructions about how to [download the book materials is in this chapter](http://www.nltk.org/book/ch01.html)
-The downloaded book is mounted in a Docker volume so it's in your machine (Check Dockerfile if courious).
-Ok now read the chapter and follow the instructions :)
-
-### Pick from previous day
-To start an existing container and attach to it in one command
-This is when you already run the 2 previous commands. When you come back to learning more.
-```
-docker start -ai nltkplayground
-```
+After that follow the book. To import
 
 ## Ideas
 1. Do a Node application with Svelte as UI framework and a backend that analyse sentiment analisis with [retextJS](https://github.com/retextjs/retext). This can be expanded to input a Tweet and analyse the overall sentiment of all the replys to that tweet.
